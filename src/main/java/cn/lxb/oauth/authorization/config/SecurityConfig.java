@@ -96,7 +96,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .addFilterBefore(validateCodeFilter, AbstractPreAuthenticatedProcessingFilter.class)
                 .addFilterBefore(validateCodeGranterFilter, AbstractPreAuthenticatedProcessingFilter.class);*/
-        http
+        //需要在此处配置，否则smsAuthenticationSecurityConfig无法生效
+        http.apply(smsAuthenticationSecurityConfig)
+                .and()
                 .authorizeRequests()
                 // 添加路径
                 .antMatchers("/oauth/sms").access("permitAll()")

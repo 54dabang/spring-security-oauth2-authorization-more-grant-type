@@ -14,6 +14,8 @@ import org.springframework.stereotype.Component;
  *
  * @author <a href="https://echocow.cn">EchoCow</a>
  * @date 2019/7/29 下午11:33
+ * 需要在SecurityConfig的config方法中进行配置，否则无法生效
+ * 配置方式：http.apply(smsAuthenticationSecurityConfig)
  */
 @Component
 public class SmsAuthenticationSecurityConfig

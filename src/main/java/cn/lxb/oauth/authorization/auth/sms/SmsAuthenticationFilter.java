@@ -20,7 +20,8 @@ public class SmsAuthenticationFilter extends AbstractAuthenticationProcessingFil
 
     SmsAuthenticationFilter() {
         // 需要拦截的路径
-        super(new AntPathRequestMatcher("/oauth/sms", HttpMethod.POST.name()));
+        //super(new AntPathRequestMatcher("/oauth/sms", HttpMethod.POST.name()));
+        super("/oauth/sms");
     }
 
     @Override
